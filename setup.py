@@ -20,16 +20,16 @@ def get_version(filename: str):
 version = get_version(filename="src/aido_agents/__init__.py")
 
 line = "daffy-aido4"
-
+install_requires = [
+        f"aido-protocols-{line}",
+    ]
 setup(
     name=f"aido-agents-{line}",
     version=version,
     keywords="",
     package_dir={"": "src"},
     packages=["aido_agents"],
-    install_requires=[
-        f"aido-protocols-{line}",
-    ],
+    install_requires=install_requires,
     entry_points={
         "console_scripts": [
 
