@@ -18,3 +18,6 @@ upload:
 	twine upload dist/*
 
 
+
+black:
+	black -l 110 src setup.py

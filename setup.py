@@ -19,10 +19,12 @@ def get_version(filename: str):
 
 version = get_version(filename="src/aido_agents/__init__.py")
 
-line = "daffy-aido4"
+line = "daffy"
+
 install_requires = [
-        f"aido-protocols-{line}",
-    ]
+    f"aido-protocols-{line}",
+    f"duckietown-world-{line}",
+]
 setup(
     name=f"aido-agents-{line}",
     version=version,
@@ -30,9 +32,5 @@ setup(
     package_dir={"": "src"},
     packages=["aido_agents"],
     install_requires=install_requires,
-    entry_points={
-        "console_scripts": [
-
-        ],
-    },
+    entry_points={"console_scripts": [],},
 )

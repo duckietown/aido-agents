@@ -17,29 +17,13 @@ red2 = RGB(1.0, 0.0, 0.0)
 
 phase2leds = {
     "left": LEDSCommands(
-        center=blue,
-        back_left=yellow,
-        back_right=red,
-        front_left=yellow,
-        front_right=white,
+        center=blue, back_left=yellow, back_right=red, front_left=yellow, front_right=white,
     ),
     "right": LEDSCommands(
-        center=blue,
-        back_left=red,
-        back_right=yellow,
-        front_left=white,
-        front_right=yellow,
+        center=blue, back_left=red, back_right=yellow, front_left=white, front_right=yellow,
     ),
-    "none": LEDSCommands(
-        center=blue, back_left=red, back_right=red, front_left=white, front_right=white
-    ),
-    "brake": LEDSCommands(
-        center=blue,
-        back_left=red2,
-        back_right=red2,
-        front_left=white,
-        front_right=white,
-    ),
+    "none": LEDSCommands(center=blue, back_left=red, back_right=red, front_left=white, front_right=white),
+    "brake": LEDSCommands(center=blue, back_left=red2, back_right=red2, front_left=white, front_right=white,),
 }
 phase_period = 0.5
 
