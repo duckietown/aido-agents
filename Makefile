@@ -11,7 +11,6 @@ bump: # v2
 	git push --tags
 	git push
 
-
 upload: # v3
 	aido-check-not-dirty
 	aido-check-tagged

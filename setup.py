@@ -25,6 +25,7 @@ install_requires = [
     f"aido-protocols-{line}",
     f"duckietown-world-{line}",
 ]
+
 setup(
     name=f"aido-agents-{line}",
     version=version,
