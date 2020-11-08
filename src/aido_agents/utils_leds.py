@@ -33,11 +33,11 @@ phase2leds = {
                                back_right=yellow,
                                front_left=red,
                                front_right=yellow, ),
-    "emergency2": LEDSCommands(center=orange,
+    "emergency2": LEDSCommands(center=red,
                                back_left=yellow,
-                               back_right=orange,
+                               back_right=red,
                                front_left=yellow,
-                               front_right=orange),
+                               front_right=red),
 }
 PHASE_SLOW: float = 0.5
 
