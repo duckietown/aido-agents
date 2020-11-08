@@ -10,11 +10,12 @@ __all__ = [
     "get_blinking_LEDs_emergency",
 ]
 
-blue = RGB(0.0, 0.0, 0.8)
+dark = RGB(0.1, 0.1, 0.1)
+blue = RGB(0.0, 0.0, 1.0)
 white = RGB(0.6, 0.6, 0.6)
 yellow = RGB(1.0, 1.0, 0.0)
-red = RGB(0.6, 0.6, 0.6)
-red2 = RGB(1.0, 0.0, 0.0)
+red = RGB(0.5, 0.0, 0.0)
+red_more = RGB(1.0, 0.0, 0.0)
 orange = RGB(1.0, 0.5, 0.3)
 
 phase2leds = {
@@ -25,12 +26,18 @@ phase2leds = {
         center=blue, back_left=red, back_right=yellow, front_left=white, front_right=yellow,
     ),
     "none": LEDSCommands(center=blue, back_left=red, back_right=red, front_left=white, front_right=white),
-    "brake": LEDSCommands(center=blue, back_left=red2, back_right=red2, front_left=white,
+    "brake": LEDSCommands(center=blue, back_left=red_more, back_right=red_more, front_left=white,
                           front_right=white, ),
-    "emergency1": LEDSCommands(center=yellow, back_left=orange, back_right=yellow, front_left=orange,
+    "emergency1": LEDSCommands(center=yellow,
+                               back_left=red,
+                               back_right=yellow,
+                               front_left=red,
                                front_right=yellow, ),
-    "emergency2": LEDSCommands(center=orange, back_left=yellow, back_right=orange, front_left=yellow,
-                               front_right=orange, ),
+    "emergency2": LEDSCommands(center=orange,
+                               back_left=yellow,
+                               back_right=orange,
+                               front_left=yellow,
+                               front_right=orange),
 }
 PHASE_SLOW: float = 0.5
 
@@ -56,7 +63,7 @@ def get_blinking_LEDs_left(t: float) -> LEDSCommands:
 
 
 def get_blinking_LEDs_emergency(t: float) -> LEDSCommands:
-    phases = ["emergency1", "none", "emergency2", "none"]
+    phases = ["emergency1",  "emergency2"]
     return get_phased(t, phases, phase_period=0.4)
 
 
