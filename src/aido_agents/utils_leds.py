@@ -8,10 +8,12 @@ __all__ = [
     "get_blinking_LEDs_right",
     "get_braking_LEDs",
     "get_blinking_LEDs_emergency",
+    "get_rotation",
 ]
 
 dark = RGB(0.1, 0.1, 0.1)
 blue = RGB(0.0, 0.0, 1.0)
+green = RGB(0.0, 1.0, 0.0)
 white = RGB(0.6, 0.6, 0.6)
 yellow = RGB(1.0, 1.0, 0.0)
 red = RGB(0.5, 0.0, 0.0)
@@ -38,6 +40,12 @@ phase2leds = {
                                back_right=red,
                                front_left=yellow,
                                front_right=red),
+
+    "rot1": LEDSCommands(center=red, front_left=green, back_left=blue, back_right=yellow, front_right=dark),
+    "rot2": LEDSCommands(center=dark, front_left=red, back_left=green, back_right=blue, front_right=dark),
+    "rot3": LEDSCommands(center=red, front_left=dark, back_left=red, back_right=green, front_right=blue),
+    "rot4": LEDSCommands(center=blue, front_left=green, back_left=dark, back_right=red, front_right=green),
+    "rot5": LEDSCommands(center=green, front_left=blue, back_left=blue, back_right=dark, front_right=red),
 }
 PHASE_SLOW: float = 0.5
 
@@ -63,7 +71,12 @@ def get_blinking_LEDs_left(t: float) -> LEDSCommands:
 
 
 def get_blinking_LEDs_emergency(t: float) -> LEDSCommands:
-    phases = ["emergency1",  "emergency2"]
+    phases = ["emergency1", "emergency2"]
+    return get_phased(t, phases, phase_period=0.4)
+
+
+def get_rotation(t: float) -> LEDSCommands:
+    phases = ["rot1", "rot2", "rot3", "rot4", "rot5"]
     return get_phased(t, phases, phase_period=0.4)
 
 
