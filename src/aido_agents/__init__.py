@@ -7,3 +7,4 @@ logger.info(f"aido-agents {__version__}")
 
 from .utils_images import *
 from .utils_leds import *
+from .baseline_full_agent import *
