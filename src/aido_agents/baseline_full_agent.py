@@ -1,3 +1,4 @@
+import time
 from dataclasses import dataclass
 from typing import cast, Optional
 
@@ -61,9 +62,10 @@ class FullAgent:
 
         # context.info('Which lane am I in?')
 
+        t0 = time.time()
         possibilities = list(get_lane_poses(self.dtmap, pose))
         if not possibilities:  # outside of lane:
-            speed = 0
+            speed = 0.05
             turn = 0.1
 
             led_commands = get_braking_LEDs(data.at_time)
@@ -87,11 +89,10 @@ class FullAgent:
 
         pwm_commands = PWMCommands(motor_left=pwm_left, motor_right=pwm_right)
 
-        # commands = PWM + LED
         commands = DB20Commands(pwm_commands, led_commands)
-        # write them out
+        dt = time.time() - t0
         context.write("commands", commands)
-        context.info('commands computed')
+        context.info(f'commands computed in {dt:.3f} seconds')
 
     def finish(self, context: Context):
         context.info("finish()")
