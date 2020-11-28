@@ -12,6 +12,7 @@ from duckietown_world import construct_map, DuckietownMap, get_lane_poses, GetLa
 
 __all__ = ['FullAgentConfig', 'FullAgent']
 
+
 @dataclass
 class FullAgentConfig:
     pass
@@ -20,6 +21,7 @@ class FullAgentConfig:
 class FullAgent:
     config: FullAgentConfig = FullAgentConfig()
     dtmap: Optional[DuckietownMap]
+    pose: np.ndarray
 
     def init(self, context: Context):
         context.info("FullAgent init()")

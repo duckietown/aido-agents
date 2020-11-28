@@ -1,6 +1,6 @@
 
 all:
-
+	echo
 
 bump-upload:
 	$(MAKE) bump
