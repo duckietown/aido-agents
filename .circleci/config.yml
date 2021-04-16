@@ -56,8 +56,8 @@ jobs:
           name: Coverage report
           when: always
           command: |
-            make coverage-combine
-            make coverage-report
+            coverage combine
+            coverage html  -d out/coverage
             coverage xml
 
 
