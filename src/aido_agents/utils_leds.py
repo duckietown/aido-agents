@@ -22,25 +22,37 @@ orange = RGB(1.0, 0.5, 0.3)
 
 phase2leds = {
     "left": LEDSCommands(
-        center=blue, back_left=yellow, back_right=red, front_left=yellow, front_right=white,
+        center=blue,
+        back_left=yellow,
+        back_right=red,
+        front_left=yellow,
+        front_right=white,
     ),
     "right": LEDSCommands(
-        center=blue, back_left=red, back_right=yellow, front_left=white, front_right=yellow,
+        center=blue,
+        back_left=red,
+        back_right=yellow,
+        front_left=white,
+        front_right=yellow,
     ),
     "none": LEDSCommands(center=blue, back_left=red, back_right=red, front_left=white, front_right=white),
-    "brake": LEDSCommands(center=blue, back_left=red_more, back_right=red_more, front_left=white,
-                          front_right=white, ),
-    "emergency1": LEDSCommands(center=yellow,
-                               back_left=red,
-                               back_right=yellow,
-                               front_left=red,
-                               front_right=yellow, ),
-    "emergency2": LEDSCommands(center=red,
-                               back_left=yellow,
-                               back_right=red,
-                               front_left=yellow,
-                               front_right=red),
-
+    "brake": LEDSCommands(
+        center=blue,
+        back_left=red_more,
+        back_right=red_more,
+        front_left=white,
+        front_right=white,
+    ),
+    "emergency1": LEDSCommands(
+        center=yellow,
+        back_left=red,
+        back_right=yellow,
+        front_left=red,
+        front_right=yellow,
+    ),
+    "emergency2": LEDSCommands(
+        center=red, back_left=yellow, back_right=red, front_left=yellow, front_right=red
+    ),
     "rot1": LEDSCommands(center=red, front_left=green, back_left=blue, back_right=yellow, front_right=dark),
     "rot2": LEDSCommands(center=dark, front_left=red, back_left=green, back_right=blue, front_right=dark),
     "rot3": LEDSCommands(center=red, front_left=dark, back_left=red, back_right=green, front_right=blue),

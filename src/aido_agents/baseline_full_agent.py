@@ -6,11 +6,18 @@ import numpy as np
 import yaml
 
 from aido_agents import get_blinking_LEDs_left, get_blinking_LEDs_right, get_braking_LEDs, jpg2rgb
-from aido_schemas import (Context, DB20Commands, DB20ObservationsPlusState, EpisodeStart, GetCommands,
-                          JPGImage, PWMCommands)
+from aido_schemas import (
+    Context,
+    DB20Commands,
+    DB20ObservationsPlusState,
+    EpisodeStart,
+    GetCommands,
+    JPGImage,
+    PWMCommands,
+)
 from duckietown_world import construct_map, DuckietownMap, get_lane_poses, GetLanePoseResult
 
-__all__ = ['FullAgentConfig', 'FullAgent']
+__all__ = ["FullAgentConfig", "FullAgent"]
 
 
 @dataclass
@@ -44,11 +51,11 @@ class FullAgent:
         # state = data.state.duckiebots
 
         if self.dtmap is None:
-            context.info('Loading map')
+            context.info("Loading map")
             yaml_str = cast(str, data.map_data)
             map_data = yaml.load(yaml_str, Loader=yaml.SafeLoader)
             self._init_map(map_data)
-            context.info('Loading map done')
+            context.info("Loading map done")
 
         mystate = data.state.duckiebots[myname]
         self.pose = mystate.pose
@@ -94,7 +101,7 @@ class FullAgent:
         commands = DB20Commands(pwm_commands, led_commands)
         dt = time.time() - t0
         context.write("commands", commands)
-        context.info(f'commands computed in {dt:.3f} seconds')
+        context.info(f"commands computed in {dt:.3f} seconds")
 
     def finish(self, context: Context):
         context.info("finish()")

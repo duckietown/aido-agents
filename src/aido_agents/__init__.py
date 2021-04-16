@@ -4,6 +4,7 @@ from zuper_commons.logs import ZLogger
 
 logger = ZLogger(__name__)
 import os
+
 path = os.path.dirname(os.path.dirname(__file__))
 logger.debug(f"aido-agents version {__version__} path {path}")
 

@@ -33,5 +33,7 @@ setup(
     package_dir={"": "src"},
     packages=["aido_agents"],
     install_requires=install_requires,
-    entry_points={"console_scripts": [],},
+    entry_points={
+        "console_scripts": [],
+    },
 )
