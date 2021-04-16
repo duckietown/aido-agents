@@ -31,7 +31,7 @@ setup(
     version=version,
     keywords="",
     package_dir={"": "src"},
-    packages=["aido_agents"],
+    packages=["aido_agents", "aido_agents_tests"],
     install_requires=install_requires,
     entry_points={
         "console_scripts": [],

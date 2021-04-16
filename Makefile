@@ -8,6 +8,10 @@ bump-upload:
 
 docs:
 
+test:
+	python -c "from aido_agents import *"
+	nosetests aido_agents_tests
+
 bump: # v2
 	bumpversion patch
 	git push --tags
