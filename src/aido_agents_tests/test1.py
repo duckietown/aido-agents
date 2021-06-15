@@ -1,3 +1,2 @@
-
 def test1():
-    from aido_agents import __version__
+    from aido_agents import StageAgent

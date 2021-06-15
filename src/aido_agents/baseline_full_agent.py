@@ -5,7 +5,6 @@ from typing import cast, Optional
 import numpy as np
 import yaml
 
-from aido_agents import get_blinking_LEDs_left, get_blinking_LEDs_right, get_braking_LEDs, jpg2rgb
 from aido_schemas import (
     Context,
     DB20Commands,
@@ -16,6 +15,8 @@ from aido_schemas import (
     PWMCommands,
 )
 from duckietown_world import construct_map, DuckietownMap, get_lane_poses, GetLanePoseResult
+from .utils_leds import get_blinking_LEDs_left, get_blinking_LEDs_right, get_braking_LEDs
+from .utils_images import jpg2rgb
 
 __all__ = ["FullAgentConfig", "FullAgent"]
 
