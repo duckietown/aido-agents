@@ -11,4 +11,4 @@ logger.debug(f"aido-agents version {__version__} path {path}")
 from .utils_images import *
 from .utils_leds import *
 from .baseline_full_agent import *
-from .baseline_state_agent import StageAgent
+from .baseline_state_agent import *
