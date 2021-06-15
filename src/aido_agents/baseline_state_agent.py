@@ -15,15 +15,15 @@ from aido_schemas import (
 from duckietown_world import construct_map, DuckietownMap, get_lane_poses, GetLanePoseResult
 from .utils_leds import get_blinking_LEDs_left, get_blinking_LEDs_right, get_braking_LEDs
 
-__all__ = ["StateAgent", "StateAgenttConfig"]
+__all__ = ["StateAgent", "StateAgentConfig"]
 
 
-class StateAgenttConfig:
+class StateAgentConfig:
     pass
 
 
 class StateAgent:
-    config: StageAgentConfig = StageAgentConfig()
+    config: StateAgentConfig = StateAgentConfig()
     dtmap: Optional[DuckietownMap]
     pose: np.ndarray
 

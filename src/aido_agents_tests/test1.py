@@ -1,2 +1,2 @@
 def test1():
-    from aido_agents import StageAgent
+    from aido_agents import StateAgent
