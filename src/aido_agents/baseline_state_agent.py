@@ -33,7 +33,6 @@ class StateAgent:
 
     def _init_map(self, map_data: dict):
         self.dtmap = construct_map(map_data)
-        print(self.dtmap)
 
     def on_received_seed(self, data: int):
         np.random.seed(data)
@@ -92,7 +91,7 @@ class StateAgent:
         commands = DB20Commands(pwm_commands, led_commands)
         dt = time.time() - t0
         context.write("commands", commands)
-        context.info(f"commands computed in {dt:.3f} seconds")
+        # context.info(f"commands computed in {dt:.3f} seconds")
 
     def finish(self, context: Context):
         context.info("finish()")
