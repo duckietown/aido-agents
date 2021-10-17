@@ -24,6 +24,10 @@ line = "daffy"
 install_requires = [
     f"aido-protocols-{line}",
     f"duckietown-world-{line}",
+    "numpy",
+    "PyYAML",
+    "zuper-commons-z6",
+    "Pillow",
 ]
 
 setup(
