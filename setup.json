@@ -1,7 +1,11 @@
 {
   "install_requires": [
+    "Pillow",
+    "PyYAML",
     "aido-protocols-daffy",
-    "duckietown-world-daffy"
+    "duckietown-world-daffy",
+    "numpy",
+    "zuper-commons-z6"
   ],
   "tests_require": [],
   "srcdir": "src",
