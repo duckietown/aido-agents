@@ -1,0 +1,21 @@
+{
+  "install_requires": [
+    "aido-protocols-daffy",
+    "duckietown-world-daffy"
+  ],
+  "tests_require": [],
+  "srcdir": "src",
+  "package_name": "aido-agents-daffy",
+  "entry_points": {
+    "console_scripts": []
+  },
+  "zip_safe": true,
+  "include_package_data": true,
+  "modules": [
+    "aido_agents"
+  ],
+  "version": "6.0.26",
+  "author": "",
+  "author_email": "",
+  "url": ""
+}
