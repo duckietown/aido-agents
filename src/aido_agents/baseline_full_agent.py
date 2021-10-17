@@ -15,8 +15,8 @@ from aido_schemas import (
     PWMCommands,
 )
 from duckietown_world import construct_map, DuckietownMap, get_lane_poses, GetLanePoseResult
-from .utils_leds import get_blinking_LEDs_left, get_blinking_LEDs_right, get_braking_LEDs
 from .utils_images import jpg2rgb
+from .utils_leds import get_blinking_LEDs_left, get_blinking_LEDs_right, get_braking_LEDs
 
 __all__ = ["FullAgentConfig", "FullAgent"]
 
