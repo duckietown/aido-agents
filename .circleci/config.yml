@@ -24,7 +24,7 @@ jobs:
       COVER_PACKAGES: aido_agents,aido_agents_tests
       TEST_PACKAGES: aido_agents_tests
     docker:
-    - image: circleci/python:3.8
+    - image: python:3.8
       auth:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
@@ -153,7 +153,7 @@ jobs:
       COVER_PACKAGES: aido_agents,aido_agents_tests
       TEST_PACKAGES: aido_agents_tests
     docker:
-    - image: circleci/python:3.8
+    - image: python:3.8
       auth:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
