@@ -7,7 +7,7 @@ __all__ = ["jpg2rgb"]
 
 
 def jpg2rgb(image_data: bytes) -> np.ndarray:
-    """ Reads JPG bytes as RGB"""
+    """Reads JPG bytes as RGB"""
 
     im = Image.open(io.BytesIO(image_data))
     im = im.convert("RGB")
